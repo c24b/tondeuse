@@ -1,17 +1,9 @@
-# Tondeuse
-Tondeuse à gazon connectée
-**********************************************
-*                MowItNow/TONDEUSE           *
-*        a little script in Python           *
-*                    by C24B                 *
-*                                            *
-**********************************************
-Commandline util
+# MowItNow/TONDEUSE
 
 ## Usage
 ```
 usage: $ python tondeuse.py <myfile>
-       $ cat myfile.txt | tondeuse.py
+       $ cat <myfile< | tondeuse.py
 ```
 en ligne de commande mettre le fichier de test
 ou piper un fichier vers le script
@@ -21,9 +13,8 @@ ou piper un fichier vers le script
 * ajout d'une simple verif que la tondeuse
 ne soit pas à l'emplacement d'une autre
 
-## Exercice
+## Context
 La société MowItNow a décidé de développer une tondeuse à gazon automatique, destinée aux surfaces rectangulaires.
-
 La tondeuse peut être programmée pour parcourir l'intégralité de la surface.
 La position de la tondeuse est représentée par une combinaison de coordonnées (x,y) et d'une lettre indiquant l'orientation selon la notation cardinale anglaise (N,E,W,S). La pelouse est divisée en grille pour simplifier la navigation.
 
@@ -45,10 +36,12 @@ Chaque tondeuse se déplace de façon séquentielle, ce qui signifie que la seco
 
 Lorsqu'une tondeuse achève une série d'instruction, elle communique sa position et son orientation.
 
-OBJECTIF
-Concevoir et écrire un programme s'exécutant sur une JVM ≥ 1.7 ou un serveur node.js, et implémentant la spécification ci-dessus et passant le test ci-après
+##Objectif
+Concevoir et écrire un programme
+implémentant la spécification ci-dessus et passant le test ci-après
 
-TEST
+
+### TEST
 Le fichier suivant est fourni en entrée :
 5 5
 1 2 N
@@ -61,3 +54,19 @@ On attend le résultat suivant (position finale des tondeuses) :
 5 1 E
 
 NB: Les données en entrée peuvent être injectée sous une autre forme qu'un fichier (par exemple un test automatisé).
+
+### Tests
+* Les tests peuvent être réalisés à partir du fichier de test de deux manières
+soit en appelant depuis la ligne de commande
+
+```
+$ python tondeuse.py test.txt
+```
+
+soit en pipant le fichier de test automatisé
+pour que le script python le traite
+
+```
+$ cat test.txt | tondeuse.py
+```
+
